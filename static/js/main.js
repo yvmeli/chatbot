@@ -10,7 +10,36 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const messageContent = document.createElement('div');
         messageContent.classList.add('message-content');
-        messageContent.textContent = message;
+        
+        // Comprobar si el mensaje contiene una URL
+        if (!isUser && message.includes("www.itla.edu.do")) {
+            // Crear un enlace para la URL
+            const urlRegex = /(https?:\/\/[^\s]+)/g;
+            messageContent.innerHTML = message.replace(urlRegex, function(url) {
+                return '<a href="' + url + '" target="_blank" rel="noopener noreferrer">' + url + '</a>';
+            });
+            
+            // Añadir vista previa del sitio web
+            const previewDiv = document.createElement('div');
+            previewDiv.classList.add('website-preview');
+            previewDiv.innerHTML = `
+                <div class="preview-container">
+                    <img src="/static/images/website-preview.jpg" alt="Vista previa de la página web del ITLA">
+                    <div class="preview-text">
+                        <h3>ITLA - Instituto Tecnológico de Las Américas</h3>
+                        <p>Sitio web oficial del Instituto Tecnológico de Las Américas</p>
+                    </div>
+                </div>
+            `;
+            
+            setTimeout(() => {
+                messageDiv.appendChild(previewDiv);
+                // Auto-scroll to the bottom
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }, 500);
+        } else {
+            messageContent.textContent = message;
+        }
 
         messageDiv.appendChild(messageContent);
         chatMessages.appendChild(messageDiv);
