@@ -48,8 +48,8 @@ itla = [
         'required_words': ['contacto']
     },
     {
-        'response': 'Las clases son en modalidad presencial y algunas virtuales.',
-        'keywords': ['modalidad', 'clases', 'virtual', 'presencial'],
+        'response': 'Las clases en ITLA se imparten en modalidad presencial y algunas en modalidad virtual. Los horarios típicos son: matutino (8:00 AM - 12:00 PM), vespertino (2:00 PM - 6:00 PM) y nocturno (6:00 PM - 10:00 PM).',
+        'keywords': ['modalidad', 'clases', 'virtual', 'presencial', 'horario', 'estudiar'],
         'required_words': ['modalidad']
     },
     {
