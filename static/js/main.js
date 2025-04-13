@@ -46,6 +46,68 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (!isUser) {
 
+            if (message.includes("proceso de admisión")) {
+                const admisionInfo = document.createElement('div');
+                admisionInfo.classList.add('admision-info');
+                admisionInfo.innerHTML = `
+                    <h3>Proceso de Admisión ITLA</h3>
+                    <div class="proceso-pasos">
+                        <div class="paso">
+                            <div class="paso-numero">1</div>
+                            <div class="paso-contenido">
+                                <h4>Registro en línea</h4>
+                                <p>Completar formulario en la página web del ITLA</p>
+                            </div>
+                        </div>
+                        <div class="paso-conector"></div>
+                        <div class="paso">
+                            <div class="paso-numero">2</div>
+                            <div class="paso-contenido">
+                                <h4>Pago de prueba</h4>
+                                <p>Realizar pago de la prueba de admisión (RD$500)</p>
+                            </div>
+                        </div>
+                        <div class="paso-conector"></div>
+                        <div class="paso">
+                            <div class="paso-numero">3</div>
+                            <div class="paso-contenido">
+                                <h4>Prueba de admisión</h4>
+                                <p>Presentar prueba en la fecha asignada</p>
+                            </div>
+                        </div>
+                        <div class="paso-conector"></div>
+                        <div class="paso">
+                            <div class="paso-numero">4</div>
+                            <div class="paso-contenido">
+                                <h4>Resultados</h4>
+                                <p>Recibir notificación de aceptación vía correo</p>
+                            </div>
+                        </div>
+                        <div class="paso-conector"></div>
+                        <div class="paso">
+                            <div class="paso-numero">5</div>
+                            <div class="paso-contenido">
+                                <h4>Inscripción</h4>
+                                <p>Completar proceso de inscripción y pago</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="requisitos-admision">
+                        <h4>Requisitos:</h4>
+                        <ul>
+                            <li>Certificado de bachiller o constancia</li>
+                            <li>Documento de identidad</li>
+                            <li>Acta de nacimiento</li>
+                            <li>2 fotos 2x2</li>
+                            <li>Formulario de solicitud completado</li>
+                        </ul>
+                    </div>
+                `;
+                
+                messageDiv.appendChild(admisionInfo);
+            }
+
             if (message.includes("modalidad presencial")) {
                 const modalidadInfo = document.createElement('div');
                 modalidadInfo.classList.add('modalidad-info');

@@ -53,9 +53,9 @@ itla = [
         'required_words': ['modalidad']
     },
     {
-        'response': 'El proceso de admisiÃ³n incluye un formulario en lÃ­nea y una prueba de admisiÃ³n.',
-        'keywords': ['proceso', 'admisiÃ³n', 'inscribirse', 'entrar'],
-        'required_words': ['admisiÃ³n']
+        'response': 'El proceso de admisión del ITLA incluye completar un formulario en línea, realizar el pago de la prueba, presentar la prueba de admisión y, si eres aceptado, completar la inscripción. Debes tener tu certificado de bachiller o estar en proceso de obtenerlo.',
+        'keywords': ['proceso', 'admision', 'admisión', 'inscribirse', 'entrar', 'ingresar', 'matricula'],
+        'required_words': ['admisión']
     },
     {
         'response': 'El ITLA fue fundado en el aÃ±o 2000.',
