@@ -38,8 +38,8 @@ itla = [
         'required_words': ['beca']
     },
     {
-        'response': 'Las carreras en el ITLA son tecnolÃ³gicas, como desarrollo de software, redes, mecatrÃ³nica, entre otras.',
-        'keywords': ['carreras', 'tecnicos', 'ofrece', 'itla'],
+        'response': 'El ITLA ofrece carreras tecnológicas de nivel técnico superior. Las principales áreas son: Desarrollo de Software, Multimedia, Mecatrónica, Seguridad Informática, Inteligencia Artificial, Ciencia de Datos, Redes de Información, y Sonido.',
+        'keywords': ['carreras', 'tecnicos', 'programas', 'ofrece', 'itla', 'estudiar'],
         'required_words': ['carreras']
     },
     {
