@@ -45,6 +45,23 @@ document.addEventListener('DOMContentLoaded', function() {
         chatMessages.appendChild(messageDiv);
 
         if (!isUser) {
+
+            if (message.includes("ITLA ofrece becas")) {
+                const becasInfo = document.createElement('div');
+                becasInfo.classList.add('becas-info');
+                becasInfo.innerHTML = `
+                    <h3>Tipos de Becas en ITLA</h3>
+                    <ul>
+                        <li><strong>Becas de Excelencia Académica</strong>: Para estudiantes con alto rendimiento</li>
+                        <li><strong>Becas Gubernamentales</strong>: A través de programas del gobierno</li>
+                        <li><strong>Becas Parciales</strong>: Cubren una parte de la matrícula</li>
+                    </ul>
+                    <a href="https://www.itla.edu.do/becas" target="_blank">Más información sobre becas</a>
+                `;
+                
+                messageDiv.appendChild(becasInfo);
+            }
+            
             if (message.includes("Instituto Tecnológico de Las Américas")) {
                 const logoImg = document.createElement('img');
                 logoImg.src = "/static/images/logo.jpg";
