@@ -405,3 +405,128 @@ a:hover {
     margin-bottom: 5px;
     font-size: 14px;
 }
+
+/* Añadir al final */
+.despedida-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.action-button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.nueva-consulta {
+    background-color: #041e42;
+    color: white;
+}
+
+.nueva-consulta:hover {
+    background-color: #0f3b7a;
+}
+
+.feedback {
+    background-color: #e0e0e0;
+    color: #333;
+}
+
+.feedback:hover {
+    background-color: #d0d0d0;
+}
+
+.wave-emoji {
+    font-size: 24px;
+    margin-top: 10px;
+    animation: wave 1s infinite;
+}
+
+@keyframes wave {
+    0% { transform: rotate(0deg); }
+    25% { transform: rotate(20deg); }
+    50% { transform: rotate(0deg); }
+    75% { transform: rotate(-20deg); }
+    100% { transform: rotate(0deg); }
+}
+
+.feedback-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.feedback-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+}
+
+.feedback-content h3 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #041e42;
+}
+
+.rating {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.star {
+    font-size: 30px;
+    color: #ddd;
+    cursor: pointer;
+    margin: 0 5px;
+    transition: color 0.2s;
+}
+
+.star:hover, .star.active {
+    color: #ffb700;
+}
+
+.feedback-content textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    resize: none;
+    margin-bottom: 15px;
+}
+
+.feedback-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.feedback-buttons button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cancel-btn {
+    background-color: #e0e0e0;
+}
+
+.submit-btn {
+    background-color: #041e42;
+    color: white;
+}

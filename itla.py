@@ -8,8 +8,8 @@ itla = [
         'required_words': []
     },
     {
-        'response': 'AdiÃ³s, Â¡que tengas un buen dÃ­a!',
-        'keywords': ['adios', 'bye', 'nos vemos', 'hasta luego'],
+        'response': 'Adiós, ¡que tengas un buen día! Ha sido un placer ayudarte con tus consultas sobre el ITLA.',
+        'keywords': ['adios', 'bye', 'nos vemos', 'hasta luego', 'chao'],
         'required_words': []
     },
     {

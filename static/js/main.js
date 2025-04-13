@@ -46,6 +46,93 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (!isUser) {
 
+            if (message.includes("Adiós") || message.includes("Ha sido un placer")) {
+                // Añadir un botón para reiniciar la conversación
+                const despedidaActions = document.createElement('div');
+                despedidaActions.classList.add('despedida-actions');
+                
+                // Crear botones
+                const nuevaConsultaBtn = document.createElement('button');
+                nuevaConsultaBtn.classList.add('action-button', 'nueva-consulta');
+                nuevaConsultaBtn.textContent = 'Nueva Consulta';
+                nuevaConsultaBtn.addEventListener('click', () => {
+                    // Añadir mensaje del sistema
+                    addMessage('¿En qué más puedo ayudarte sobre el ITLA?', false);
+                    
+                    // Hacer scroll al input
+                    userInput.focus();
+                });
+                
+                const feedbackBtn = document.createElement('button');
+                feedbackBtn.classList.add('action-button', 'feedback');
+                feedbackBtn.textContent = 'Dar Feedback';
+                feedbackBtn.addEventListener('click', () => {
+                    // Mostrar modal de feedback
+                    const feedbackModal = document.createElement('div');
+                    feedbackModal.classList.add('feedback-modal');
+                    feedbackModal.innerHTML = `
+                        <div class="feedback-content">
+                            <h3>¿Cómo te pareció la atención?</h3>
+                            <div class="rating">
+                                <span class="star" data-rating="1">★</span>
+                                <span class="star" data-rating="2">★</span>
+                                <span class="star" data-rating="3">★</span>
+                                <span class="star" data-rating="4">★</span>
+                                <span class="star" data-rating="5">★</span>
+                            </div>
+                            <textarea placeholder="Comentarios adicionales (opcional)"></textarea>
+                            <div class="feedback-buttons">
+                                <button class="cancel-btn">Cancelar</button>
+                                <button class="submit-btn">Enviar</button>
+                            </div>
+                        </div>
+                    `;
+                    
+                    document.body.appendChild(feedbackModal);
+                    
+                    // Configurar eventos de estrellas
+                    const stars = feedbackModal.querySelectorAll('.star');
+                    stars.forEach(star => {
+                        star.addEventListener('click', () => {
+                            const rating = star.getAttribute('data-rating');
+                            stars.forEach(s => {
+                                if (s.getAttribute('data-rating') <= rating) {
+                                    s.classList.add('active');
+                                } else {
+                                    s.classList.remove('active');
+                                }
+                            });
+                        });
+                    });
+                    
+                    // Configurar botón de cancelar
+                    feedbackModal.querySelector('.cancel-btn').addEventListener('click', () => {
+                        document.body.removeChild(feedbackModal);
+                    });
+                    
+                    // Configurar botón de enviar
+                    feedbackModal.querySelector('.submit-btn').addEventListener('click', () => {
+                        document.body.removeChild(feedbackModal);
+                        addMessage('¡Gracias por tu feedback! Nos ayuda a mejorar.', false);
+                    });
+                });
+                
+                // Añadir botones al contenedor
+                despedidaActions.appendChild(nuevaConsultaBtn);
+                despedidaActions.appendChild(feedbackBtn);
+                
+                // Añadir al mensaje
+                messageDiv.appendChild(despedidaActions);
+                
+                // Añadir animación de despedida
+                setTimeout(() => {
+                    const waveEmoji = document.createElement('div');
+                    waveEmoji.classList.add('wave-emoji');
+                    waveEmoji.textContent = '👋';
+                    messageDiv.appendChild(waveEmoji);
+                }, 500);
+            }
+
             if (message.includes("proceso de admisión")) {
                 const admisionInfo = document.createElement('div');
                 admisionInfo.classList.add('admision-info');
