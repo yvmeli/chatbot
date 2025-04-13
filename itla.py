@@ -33,8 +33,8 @@ itla = [
         'required_words': ['pagina']
     },
     {
-        'response': 'SÃ­, el ITLA ofrece becas a travÃ©s de diferentes programas del gobierno.',
-        'keywords': ['becas', 'beca', 'ayuda', 'financiera'],
+        'response': 'Sí, el ITLA ofrece becas a través de diferentes programas del gobierno. Hay becas completas y parciales, dependiendo de tus calificaciones y situación económica. Puedes obtener más información en la sección de becas de la página web.',
+        'keywords': ['becas', 'beca', 'ayuda', 'financiera', 'pagar', 'costo'],
         'required_words': ['beca']
     },
     {
