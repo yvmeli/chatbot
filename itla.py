@@ -43,9 +43,9 @@ itla = [
         'required_words': ['carreras']
     },
     {
-        'response': 'Puedes comunicarte con ITLA al telÃ©fono (809) 738-4852.',
-        'keywords': ['telefono', 'contacto', 'llamar', 'numero'],
-        'required_words': ['telefono']
+        'response': 'Puedes comunicarte con ITLA al teléfono (809) 738-4852. También puedes escribir al correo info@itla.edu.do.',
+        'keywords': ['telefono', 'contacto', 'llamar', 'numero', 'email', 'correo'],
+        'required_words': ['contacto']
     },
     {
         'response': 'Las clases son en modalidad presencial y algunas virtuales.',
