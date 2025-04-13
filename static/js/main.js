@@ -14,6 +14,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
         messageDiv.appendChild(messageContent);
         chatMessages.appendChild(messageDiv);
+
+        if (!isUser && message.includes("Instituto Tecnológico de Las Américas")) {
+            const logoImg = document.createElement('img');
+            logoImg.src = "/static/images/logo.png";
+            logoImg.alt = "Logo ITLA";
+            logoImg.style.maxWidth = "200px";
+            logoImg.style.margin = "10px 0";
+            
+            chatMessages.appendChild(logoImg);
+        }
         
         // Auto-scroll to the bottom
         chatMessages.scrollTop = chatMessages.scrollHeight;
