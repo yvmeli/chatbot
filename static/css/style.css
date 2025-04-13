@@ -162,3 +162,53 @@ a:hover {
     margin-bottom: 5px;
     font-size: 14px;
 }
+
+/* Añadir al final */
+.carreras-info {
+    margin-top: 15px;
+    padding: 10px;
+}
+
+.carreras-info h3 {
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #041e42;
+    text-align: center;
+}
+
+.carreras-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.carrera-card {
+    background-color: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    padding: 10px;
+    transition: transform 0.2s;
+}
+
+.carrera-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.carrera-card h4 {
+    color: #041e42;
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+.carrera-card p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+@media (max-width: 600px) {
+    .carreras-grid {
+        grid-template-columns: 1fr;
+    }
+}

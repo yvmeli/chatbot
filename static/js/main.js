@@ -46,6 +46,39 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (!isUser) {
 
+            if (message.includes("carreras tecnológicas")) {
+                const carrerasInfo = document.createElement('div');
+                carrerasInfo.classList.add('carreras-info');
+                
+                const carreras = [
+                    { nombre: "Desarrollo de Software", duracion: "2.5 años", descripcion: "Creación de aplicaciones y sistemas" },
+                    { nombre: "Multimedia", duracion: "2.5 años", descripcion: "Diseño y producción de contenido digital" },
+                    { nombre: "Mecatrónica", duracion: "2.5 años", descripcion: "Combinación de mecánica, electrónica y programación" },
+                    { nombre: "Seguridad Informática", duracion: "2.5 años", descripcion: "Protección de sistemas y datos" },
+                    { nombre: "Inteligencia Artificial", duracion: "2.5 años", descripcion: "Desarrollo de sistemas inteligentes" },
+                    { nombre: "Ciencia de Datos", duracion: "2.5 años", descripcion: "Análisis y procesamiento de grandes volúmenes de datos" },
+                    { nombre: "Redes de Información", duracion: "2.5 años", descripcion: "Infraestructura de comunicaciones" },
+                    { nombre: "Sonido", duracion: "2.5 años", descripcion: "Producción y edición de audio" }
+                ];
+                
+                let carrerasHTML = `<h3>Carreras Técnicas en ITLA</h3><div class="carreras-grid">`;
+                
+                carreras.forEach(carrera => {
+                    carrerasHTML += `
+                        <div class="carrera-card">
+                            <h4>${carrera.nombre}</h4>
+                            <p><strong>Duración:</strong> ${carrera.duracion}</p>
+                            <p>${carrera.descripcion}</p>
+                        </div>
+                    `;
+                });
+                
+                carrerasHTML += `</div>`;
+                carrerasInfo.innerHTML = carrerasHTML;
+                
+                messageDiv.appendChild(carrerasInfo);
+            }
+
             if (message.includes("ITLA ofrece becas")) {
                 const becasInfo = document.createElement('div');
                 becasInfo.classList.add('becas-info');
