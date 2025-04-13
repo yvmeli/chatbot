@@ -46,6 +46,55 @@ document.addEventListener('DOMContentLoaded', function() {
 
         if (!isUser) {
 
+            if (message.includes("modalidad presencial")) {
+                const modalidadInfo = document.createElement('div');
+                modalidadInfo.classList.add('modalidad-info');
+                modalidadInfo.innerHTML = `
+                    <h3>Modalidades de Estudio en ITLA</h3>
+                    <div class="table-container">
+                        <table class="modalidad-table">
+                            <thead>
+                                <tr>
+                                    <th>Modalidad</th>
+                                    <th>Horarios</th>
+                                    <th>Características</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Presencial</strong></td>
+                                    <td>
+                                        • Matutino (8:00 AM - 12:00 PM)<br>
+                                        • Vespertino (2:00 PM - 6:00 PM)<br>
+                                        • Nocturno (6:00 PM - 10:00 PM)
+                                    </td>
+                                    <td>
+                                        • Clases en campus<br>
+                                        • Acceso a laboratorios<br>
+                                        • Interacción directa con profesores
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Virtual</strong></td>
+                                    <td>
+                                        • Flexible<br>
+                                        • Sesiones sincrónicas programadas
+                                    </td>
+                                    <td>
+                                        • Plataforma Microsoft Teams<br>
+                                        • Material disponible 24/7<br>
+                                        • Tutorías en línea
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="modalidad-nota">Nota: La disponibilidad de modalidades puede variar según la carrera y el cuatrimestre.</p>
+                `;
+                
+                messageDiv.appendChild(modalidadInfo);
+            }
+
             if (message.includes("comunicarte con ITLA")) {
                 const contactoInfo = document.createElement('div');
                 contactoInfo.classList.add('contacto-info');
