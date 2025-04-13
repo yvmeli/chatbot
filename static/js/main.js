@@ -10,16 +10,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const messageContent = document.createElement('div');
         messageContent.classList.add('message-content');
-        
-        // Comprobar si el mensaje contiene una URL
+
         if (!isUser && message.includes("www.itla.edu.do")) {
-            // Crear un enlace para la URL
             const urlRegex = /(https?:\/\/[^\s]+)/g;
             messageContent.innerHTML = message.replace(urlRegex, function(url) {
                 return '<a href="' + url + '" target="_blank" rel="noopener noreferrer">' + url + '</a>';
             });
-            
-            // Añadir vista previa del sitio web
+
             const previewDiv = document.createElement('div');
             previewDiv.classList.add('website-preview');
             previewDiv.innerHTML = `
@@ -34,7 +31,6 @@ document.addEventListener('DOMContentLoaded', function() {
             
             setTimeout(() => {
                 messageDiv.appendChild(previewDiv);
-                // Auto-scroll to the bottom
                 chatMessages.scrollTop = chatMessages.scrollHeight;
             }, 500);
         } else {
@@ -47,19 +43,15 @@ document.addEventListener('DOMContentLoaded', function() {
         if (!isUser) {
 
             if (message.includes("Adiós") || message.includes("Ha sido un placer")) {
-                // Añadir un botón para reiniciar la conversación
                 const despedidaActions = document.createElement('div');
                 despedidaActions.classList.add('despedida-actions');
-                
-                // Crear botones
+
                 const nuevaConsultaBtn = document.createElement('button');
                 nuevaConsultaBtn.classList.add('action-button', 'nueva-consulta');
                 nuevaConsultaBtn.textContent = 'Nueva Consulta';
                 nuevaConsultaBtn.addEventListener('click', () => {
-                    // Añadir mensaje del sistema
                     addMessage('¿En qué más puedo ayudarte sobre el ITLA?', false);
-                    
-                    // Hacer scroll al input
+
                     userInput.focus();
                 });
                 
@@ -67,7 +59,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 feedbackBtn.classList.add('action-button', 'feedback');
                 feedbackBtn.textContent = 'Dar Feedback';
                 feedbackBtn.addEventListener('click', () => {
-                    // Mostrar modal de feedback
                     const feedbackModal = document.createElement('div');
                     feedbackModal.classList.add('feedback-modal');
                     feedbackModal.innerHTML = `
@@ -89,8 +80,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     `;
                     
                     document.body.appendChild(feedbackModal);
-                    
-                    // Configurar eventos de estrellas
+
                     const stars = feedbackModal.querySelectorAll('.star');
                     stars.forEach(star => {
                         star.addEventListener('click', () => {
@@ -104,27 +94,22 @@ document.addEventListener('DOMContentLoaded', function() {
                             });
                         });
                     });
-                    
-                    // Configurar botón de cancelar
+
                     feedbackModal.querySelector('.cancel-btn').addEventListener('click', () => {
                         document.body.removeChild(feedbackModal);
                     });
-                    
-                    // Configurar botón de enviar
+
                     feedbackModal.querySelector('.submit-btn').addEventListener('click', () => {
                         document.body.removeChild(feedbackModal);
                         addMessage('¡Gracias por tu feedback! Nos ayuda a mejorar.', false);
                     });
                 });
                 
-                // Añadir botones al contenedor
                 despedidaActions.appendChild(nuevaConsultaBtn);
                 despedidaActions.appendChild(feedbackBtn);
                 
-                // Añadir al mensaje
                 messageDiv.appendChild(despedidaActions);
                 
-                // Añadir animación de despedida
                 setTimeout(() => {
                     const waveEmoji = document.createElement('div');
                     waveEmoji.classList.add('wave-emoji');
@@ -199,7 +184,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const modalidadInfo = document.createElement('div');
                 modalidadInfo.classList.add('modalidad-info');
                 modalidadInfo.innerHTML = `
-                    <h3>Modalidades de Estudio en ITLA</h3>
+                    <h3>Modalidades de estudio en ITLA</h3>
                     <div class="table-container">
                         <table class="modalidad-table">
                             <thead>
@@ -268,14 +253,14 @@ document.addEventListener('DOMContentLoaded', function() {
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
                             <div>
                                 <strong>Facebook</strong><br>
-                                <a href="https://www.facebook.com/ITLA.edu" target="_blank">@ITLA.edu</a>
+                                <a href="https://www.facebook.com/ITLARD/?locale=es_LA" target="_blank">@ITLARD</a>
                             </div>
                         </div>
                         <div class="contacto-item">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
                             <div>
                                 <strong>Instagram</strong><br>
-                                <a href="https://www.instagram.com/itla.edu.do/" target="_blank">@itla.edu.do</a>
+                                <a href="https://www.instagram.com/itlard/" target="_blank">@itlard</a>
                             </div>
                         </div>
                     </div>
@@ -299,7 +284,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     { nombre: "Sonido", duracion: "2.5 años", descripcion: "Producción y edición de audio" }
                 ];
                 
-                let carrerasHTML = `<h3>Carreras Técnicas en ITLA</h3><div class="carreras-grid">`;
+                let carrerasHTML = `<h3>Carreras técnicas en ITLA</h3><div class="carreras-grid">`;
                 
                 carreras.forEach(carrera => {
                     carrerasHTML += `
@@ -323,7 +308,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 becasInfo.innerHTML = `
                     <h3>Tipos de Becas en ITLA</h3>
                     <ul>
-                        <li><strong>Becas de Excelencia Académica</strong>: Para estudiantes con alto rendimiento</li>
+                        <li><strong>Becas de excelencia académica</strong>: Para estudiantes con alto rendimiento</li>
                         <li><strong>Becas Gubernamentales</strong>: A través de programas del gobierno</li>
                         <li><strong>Becas Parciales</strong>: Cubren una parte de la matrícula</li>
                     </ul>
@@ -343,46 +328,101 @@ document.addEventListener('DOMContentLoaded', function() {
                 chatMessages.appendChild(logoImg);
             }
 
-            if (message.includes("ubicado en San Luis, Santo Domingo Este")) {
-                const mapDiv = document.createElement('div');
-                mapDiv.id = 'map';
-                mapDiv.style.height = '200px';
-                mapDiv.style.width = '100%';
-                mapDiv.style.marginTop = '10px';
-                mapDiv.style.borderRadius = '10px';
+            if (message.includes("ubicado en La Caleta, Boca Chica")) {
+                const mapContainer = document.createElement('div');
+                mapContainer.classList.add('map-container');
+                mapContainer.style.position = 'relative';
+                mapContainer.style.marginTop = '15px';
                 
-                chatMessages.appendChild(mapDiv);
+                const mapOverlay = document.createElement('div');
+                mapOverlay.classList.add('map-overlay');
+                mapOverlay.innerHTML = `
+                    <div class="map-info">
+                        <h4>ITLA - Instituto Tecnológico de Las Américas</h4>
+                        <p>Autopista Las Américas, Km. 27, PCSD, La Caleta, Boca Chica 11606</p>
+                        <a href="https://maps.google.com/?q=18.4825,-69.7533" target="_blank" class="map-link">
+                            Abrir en Google Maps
+                        </a>
+                    </div>
+                `;
+
+                const mapImage = document.createElement('img');
+                mapImage.src = "https://maps.googleapis.com/maps/api/staticmap?center=18.4825,-69.7533&zoom=15&size=600x300&maptype=roadmap&markers=color:red%7C18.4825,-69.7533&key=YOUR_API_KEY";
+                mapImage.alt = "Mapa de ubicación de ITLA";
+                mapImage.width = "100%";
+                mapImage.style.borderRadius = "10px";
+                mapImage.style.maxWidth = "100%";
                 
-                // Inicializar mapa
-                const itlaLocation = { lat: 18.4861, lng: -69.8481 }; // Coordenadas aproximadas del ITLA
-                const map = new google.maps.Map(mapDiv, {
-                    center: itlaLocation,
-                    zoom: 15,
-                });
+                mapContainer.appendChild(mapImage);
+                mapContainer.appendChild(mapOverlay);
                 
-                // Añadir marcador
-                new google.maps.Marker({
-                    position: itlaLocation,
-                    map: map,
-                    title: "ITLA"
-                });
+                const style = document.createElement('style');
+                style.textContent = `
+                    .map-container {
+                        margin-top: 15px;
+                        border-radius: 10px;
+                        overflow: hidden;
+                        border: 1px solid #ddd;
+                        max-width: 100%;
+                    }
+                    .map-overlay {
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                        background-color: rgba(255, 255, 255, 0.9);
+                        padding: 10px;
+                        border-top: 1px solid #ddd;
+                    }
+                    .map-info {
+                        font-size: 14px;
+                    }
+                    .map-info h4 {
+                        margin: 0 0 5px 0;
+                        color: #333;
+                    }
+                    .map-info p {
+                        margin: 0 0 8px 0;
+                        color: #666;
+                    }
+                    .map-link {
+                        display: inline-block;
+                        padding: 6px 12px;
+                        background-color: #4285F4;
+                        color: white;
+                        text-decoration: none;
+                        border-radius: 4px;
+                        font-weight: bold;
+                    }
+                    .map-link:hover {
+                        background-color: #3367D6;
+                    }
+                `;
+                document.head.appendChild(style);
+                
+                messageDiv.appendChild(mapContainer);
+                
+                const fallbackLink = document.createElement('div');
+                fallbackLink.classList.add('fallback-link');
+                fallbackLink.innerHTML = `
+                    <p style="margin-top: 10px; font-size: 13px; color: #666;">
+                        Si no puedes ver el mapa, <a href="https://maps.google.com/?q=ITLA+Instituto+Tecnológico+de+Las+Américas,+Autopista+Las+Américas,+Km.+27,+PCSD,+La+Caleta,+Boca+Chica+11606" target="_blank">haz clic aquí para ver la ubicación exacta</a>.
+                    </p>
+                `;
+                messageDiv.appendChild(fallbackLink);
             }
         }
         
-        // Auto-scroll to the bottom
         chatMessages.scrollTop = chatMessages.scrollHeight;
     }
 
     function sendMessage() {
         const message = userInput.value.trim();
         if (message) {
-            // Add user message to chat
             addMessage(message, true);
             
-            // Clear input field
             userInput.value = '';
             
-            // Send to server and get response
             fetch('/get_response', {
                 method: 'POST',
                 headers: {
@@ -392,7 +432,6 @@ document.addEventListener('DOMContentLoaded', function() {
             })
             .then(response => response.json())
             .then(data => {
-                // Add bot response to chat
                 addMessage(data.response, false);
             })
             .catch(error => {
@@ -402,10 +441,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Send message when button is clicked
     sendBtn.addEventListener('click', sendMessage);
 
-    // Send message when Enter key is pressed
     userInput.addEventListener('keypress', function(e) {
         if (e.key === 'Enter') {
             sendMessage();
